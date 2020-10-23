@@ -1,5 +1,4 @@
-![](https://github.com/oryanmoshe/debezium-timestamp-converter/workflows/Run%20Tests/badge.svg?branch=master) ![](https://github.com/oryanmoshe/debezium-timestamp-converter/workflows/GitHub%20Release/badge.svg) ![](https://github.com/oryanmoshe/debezium-timestamp-converter/workflows/GitHub%20Package/badge.svg)
-# Debezium Timestamp Converter
+# Truncate Blobs utility for Debezium
 This is a custom converter to use with debezium (using their SPI, introduced in version 1.1)  
 You can use it to convert all temporal data types (in all databases) into a specified format you choose.
 
@@ -13,7 +12,7 @@ You can either download the `.jar` file from the [releases](https://github.com/o
 To configure this converter all you need to do is add the following lines to your connector configuration:
 ```json
 "converters": "timestampConverter",
-"timestampConverter.type": "oryanmoshe.kafka.connect.util.TimestampConverter"
+"timestampConverter.type": "TimestampConverter"
 ```
 
 ### Additional Configuration

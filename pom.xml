@@ -1,28 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>oryanmoshe.kafka.connect.util</groupId>
-  <artifactId>TimestampConverter</artifactId>
+  <groupId>com.sugarcrm.cxp.debezium_truncate_blobs</groupId>
+  <artifactId>debezium-truncate-blobs</artifactId>
   <packaging>jar</packaging>
-  <version>1.2.2-SNAPSHOT</version>
-  <name>TimestampConverter</name>
+  <version>0.0.1</version>
+  <name>Truncate Blobs utility for Debezium</name>
   <url>http://maven.apache.org</url>
 
   <properties>
-    <version.debezium>1.1.0.Final</version.debezium>
-    <version.kafka>2.3.1</version.kafka>
+    <version.debezium>1.2.4.Final</version.debezium>
+    <version.kafka>2.4.1</version.kafka>
     <junit.jupiter.version>5.4.1</junit.jupiter.version>
     <maven.shade.version>3.2.1</maven.shade.version>
     <!-- JUnit 5 requires Surefire version 2.22.1 or higher -->
     <maven.surefire.version>2.22.1</maven.surefire.version>
   </properties>
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub oryanmoshe Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/oryanmoshe/debezium-timestamp-converter</url>
-    </repository>
-  </distributionManagement>
+<!--  <distributionManagement>-->
+<!--    <repository>-->
+<!--      <id>github</id>-->
+<!--      <name>GitHub oryanmoshe Apache Maven Packages</name>-->
+<!--      <url>https://maven.pkg.github.com/oryanmoshe/debezium-timestamp-converter</url>-->
+<!--    </repository>-->
+<!--  </distributionManagement>-->
 
   <build>
     <plugins>
@@ -37,23 +37,23 @@
           </compilerArgs>
           <showWarnings>true</showWarnings>
           <showDeprecation>true</showDeprecation>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>9</source>
+          <target>9</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>${maven.shade.version}</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-shade-plugin</artifactId>-->
+<!--        <version>${maven.shade.version}</version>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <phase>package</phase>-->
+<!--            <goals>-->
+<!--              <goal>shade</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven.surefire.version}</version>
